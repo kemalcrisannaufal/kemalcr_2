@@ -12,15 +12,21 @@ const config: Config = {
     extend: {
       keyframes: {
         slide_left: {
-          "100%": { transform: "translateX(-40%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
         slide_right: {
-          "100%": { transform: "translateX(40%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+        wiggle: {
+          "0%": { transform: "rotate(5deg)" },
+          "50%": { transform: "rotate(-5deg)" },
+          "100%": { transform: "rotate(5deg)" },
         },
       },
       animation: {
         slideLeft: "slide_left 15s linear infinite",
         slideRight: "slide_right 15s linear infinite",
+        wiggle: "wiggle 1s ease-in-out infinite",
       },
       colors: {
         background: "var(--background)",

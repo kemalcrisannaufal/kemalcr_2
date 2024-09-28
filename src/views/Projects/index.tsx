@@ -18,6 +18,7 @@ import {
 } from "react-icons/si";
 import { DiJava } from "react-icons/di";
 import IconHoverDetail from "@/components/elements/IconHoverDetail";
+import { motion } from "framer-motion";
 
 export function ProjectsList() {
   const data = [
@@ -37,9 +38,13 @@ export function ProjectsList() {
             </p>
 
             <div className="mb-2 text-neutral-500 font-medium text-md flex items-center gap-2">
-              <p className="text-xs md:text-md lg:text-base mr-2">💻 Tech Stack : </p>
+              <p className="text-xs md:text-md lg:text-base mr-2">
+                💻 Tech Stack :{" "}
+              </p>
               <IconHoverDetail
-                icon={<SiJavascript className="text-yellow-500 text-xl md:text-2xl" />}
+                icon={
+                  <SiJavascript className="text-yellow-500 text-xl md:text-2xl" />
+                }
                 name={"Javascript"}
               />
               <IconHoverDetail
@@ -51,7 +56,9 @@ export function ProjectsList() {
                 name={"Framer"}
               />
               <IconHoverDetail
-                icon={<SiTailwindcss className="text-blue-500 text-xl md:text-2xl" />}
+                icon={
+                  <SiTailwindcss className="text-blue-500 text-xl md:text-2xl" />
+                }
                 name={"Tailwind CSS"}
               />
             </div>
@@ -65,7 +72,7 @@ export function ProjectsList() {
                 @aulianza
               </a>
             </p>
-            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]">
+            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] hover:scale-110 hover:transition-all hover:duration-300 hover:ease-in-out hover:shadow-lg flex items-center">
               <img
                 src="/images/portfolio-image-1.png"
                 alt=""
@@ -91,25 +98,35 @@ export function ProjectsList() {
               edit, and publish blog posts.
             </p>
             <div className="mb-2 text-neutral-500 font-medium text-md flex items-center gap-2">
-              <p className="text-xs md:text-md lg:text-base mr-2">💻 Tech Stack : </p>
+              <p className="text-xs md:text-md lg:text-base mr-2">
+                💻 Tech Stack :{" "}
+              </p>
               <IconHoverDetail
-                icon={<SiTypescript className="text-yellow-500 text-xl md:text-2xl" />}
+                icon={
+                  <SiTypescript className="text-yellow-500 text-xl md:text-2xl" />
+                }
                 name={"Typescript"}
               />
               <IconHoverDetail
-                icon={<SiNextdotjs className="text-black text-xl md:text-2xl" />}
+                icon={
+                  <SiNextdotjs className="text-black text-xl md:text-2xl" />
+                }
                 name={"Next.js"}
               />
               <IconHoverDetail
-                icon={<SiTailwindcss className="text-blue-500 text-xl md:text-2xl" />}
+                icon={
+                  <SiTailwindcss className="text-blue-500 text-xl md:text-2xl" />
+                }
                 name={"Tailwind CSS"}
               />
               <IconHoverDetail
-                icon={<SiFirebase className="text-yellow-500 text-xl md:text-2xl" />}
+                icon={
+                  <SiFirebase className="text-yellow-500 text-xl md:text-2xl" />
+                }
                 name={"Firebase"}
               />
             </div>
-            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]">
+            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] hover:scale-110 hover:transition-all hover:duration-300 hover:ease-in-out hover:shadow-lg flex items-center">
               <img
                 src="/images/blog-2.png"
                 alt=""
@@ -135,13 +152,17 @@ export function ProjectsList() {
               Fakestore API.
             </p>
             <div className="mb-2 text-neutral-500 font-medium text-md flex items-center gap-2">
-              <p className="text-xs md:text-md lg:text-base mr-2">💻 Tech Stack : </p>
+              <p className="text-xs md:text-md lg:text-base mr-2">
+                💻 Tech Stack :{" "}
+              </p>
               <IconHoverDetail
                 icon={<SiReact className="text-blue-500 text-xl md:text-2xl" />}
                 name={"React"}
               />
               <IconHoverDetail
-                icon={<SiTailwindcss className="text-blue-500 text-xl md:text-2xl" />}
+                icon={
+                  <SiTailwindcss className="text-blue-500 text-xl md:text-2xl" />
+                }
                 name={"Tailwind CSS"}
               />
               <IconHoverDetail
@@ -149,7 +170,7 @@ export function ProjectsList() {
                 name={"Fakestore API"}
               />
             </div>
-            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]">
+            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] hover:scale-110 hover:transition-all hover:duration-300 hover:ease-in-out hover:shadow-lg flex items-center">
               <img
                 src="/images/fake-store-3.png"
                 alt=""
@@ -171,13 +192,17 @@ export function ProjectsList() {
           />
           <div>
             <p className="text-xs md:text-md lg:text-base mb-2 text-neutral-500 font-medium">
-              📄 Description: A football information app providing real-time
-              match updates and news.
+              📄 Description: A football information app providing match,
+              standing, highlights, and news.
             </p>
             <div className="mb-2 text-neutral-500 font-medium text-md flex items-center gap-2">
-              <p className="text-xs md:text-md lg:text-base mr-2">💻 Tech Stack : </p>
+              <p className="text-xs md:text-md lg:text-base mr-2">
+                💻 Tech Stack :{" "}
+              </p>
               <IconHoverDetail
-                icon={<SiLaravel className="text-red-500 text-xl md:text-2xl" />}
+                icon={
+                  <SiLaravel className="text-red-500 text-xl md:text-2xl" />
+                }
                 name={"Laravel"}
               />
               <IconHoverDetail
@@ -185,11 +210,13 @@ export function ProjectsList() {
                 name={"MySQL"}
               />
               <IconHoverDetail
-                icon={<SiBootstrap className="text-yellow-500 text-xl md:text-2xl" />}
+                icon={
+                  <SiBootstrap className="text-yellow-500 text-xl md:text-2xl" />
+                }
                 name={"Bootstrap"}
               />
             </div>
-            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]">
+            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] hover:scale-110 hover:transition-all hover:duration-300 hover:ease-in-out hover:shadow-lg flex items-center">
               <img
                 src="/images/maenbal-1.png"
                 alt=""
@@ -215,7 +242,9 @@ export function ProjectsList() {
               slots.
             </p>
             <div className="mb-2 text-neutral-500 font-medium text-md flex items-center gap-2">
-              <p className="text-xs md:text-md lg:text-base mr-2">💻 Tech Stack : </p>
+              <p className="text-xs md:text-md lg:text-base mr-2">
+                💻 Tech Stack :{" "}
+              </p>
               <IconHoverDetail
                 icon={<DiJava className="text-red-500 text-xl md:text-2xl" />}
                 name={"Java"}
@@ -226,7 +255,7 @@ export function ProjectsList() {
                 name={"MySQL"}
               />
             </div>
-            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]">
+            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] hover:scale-110 hover:transition-all hover:duration-300 hover:ease-in-out hover:shadow-lg flex items-center">
               <img
                 src="/images/raedam_project.png"
                 alt=""
@@ -254,31 +283,37 @@ export function ProjectsList() {
               tuberculosis from chest X-ray images.
             </p>
             <div className="mb-2 text-neutral-500 font-medium text-md flex items-center gap-2">
-              <p className="text-xs md:text-md lg:text-base mr-2">💻 Tech Stack : </p>
+              <p className="text-xs md:text-md lg:text-base mr-2">
+                💻 Tech Stack :{" "}
+              </p>
               <IconHoverDetail
-                icon={<SiJupyter className="text-red-500 text-xl md:text-2xl" />}
+                icon={
+                  <SiJupyter className="text-red-500 text-xl md:text-2xl" />
+                }
                 name={"Jupyter Notebook"}
               />
               <IconHoverDetail
-                icon={<SiPython className="text-yellow-500 text-xl md:text-2xl" />}
+                icon={
+                  <SiPython className="text-yellow-500 text-xl md:text-2xl" />
+                }
                 name={"Python"}
               />
             </div>
-            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]">
+            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] hover:scale-110 hover:transition-all hover:duration-300 hover:ease-in-out hover:shadow-lg flex items-center">
               <img
                 src="/images/paru1.png"
                 alt=""
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]">
+            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] hover:scale-110 hover:transition-all hover:duration-300 hover:ease-in-out hover:shadow-lg flex items-center">
               <img
                 src="/images/paru2.png"
                 alt=""
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]">
+            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] hover:scale-110 hover:transition-all hover:duration-300 hover:ease-in-out hover:shadow-lg flex items-center">
               <img
                 src="/images/paru3.png"
                 alt=""
@@ -300,9 +335,14 @@ export function ProjectsList() {
 
 const ProjectsView = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: -15 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 1, x: -15 }}
+      transition={{ duration: 0.5 }}
+    >
       <ProjectsList />
-    </>
+    </motion.div>
   );
 };
 
