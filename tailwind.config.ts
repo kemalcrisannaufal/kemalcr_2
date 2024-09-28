@@ -10,6 +10,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        marquee: {
+          "100%": { transform: "translateX(-40%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 15s linear infinite",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

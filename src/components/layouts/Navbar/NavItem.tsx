@@ -16,6 +16,7 @@ const NavItem = ({
         className="p-2 flex justify-between items-center"
       >
         {name}
+
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}

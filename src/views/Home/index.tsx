@@ -1,4 +1,6 @@
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+import TechStack from "@/components/elements/TechStack";
+import { techStacks } from "@/common/constant/techStack";
 
 const HomeView = () => {
   const words = [
@@ -9,18 +11,43 @@ const HomeView = () => {
       text: "Crisannaufal",
     },
   ];
+  const halfLength = Math.ceil(techStacks.length / 2);
+  const firstHalf = techStacks.slice(0, halfLength);
+  const secondHalf = techStacks.slice(halfLength);
+
   return (
     <div className="w-full min-h-[80vh] flex">
       <div className="w-full flex flex-col justify-center items-center">
         <TypewriterEffectSmooth words={words} />
         <div>
-          <p className="hidden md:block text-center text-md">
-            I am a Computer Science student at Telkom University, specializing
-            in Machine Learning, Data Science, and Software Engineering.
+          <p className="text-center text-sm md:text-lg -mt-4 mb-4 text-neutral-600 font-medium">
+            Computer Science student at Telkom University.
           </p>
-          <p className="block md:hidden text-center text-xs">
+          <div className="hidden md:block flex gap-2 select-none">
+            <div className="bg-gradient-to-r from-teal-500 to-teal-300 px-4 py-2 text-white font-medium inline-block rounded-l">
+              Machine Learning
+            </div>
+            <div className="bg-gradient-to-r from-blue-500 to-blue-300 px-4 py-2 text-white font-medium inline-block">
+              Data Science
+            </div>
+            <div className="bg-gradient-to-r from-cyan-500 to-cyan-300 px-4 py-2 text-white font-medium inline-block rounded-r">
+              Software Engineering
+            </div>
+          </div>
+          <p className="block md:hidden text-center text-xs text-neutral-700 font-semibold">
             | Machine Learning | Data Science | Software Engineering |
           </p>
+        </div>
+
+        <div className="hidden md:block w-[80%] lg:w-[50%]">
+          <TechStack techStacks={techStacks} />
+        </div>
+
+        <div className="md:hidden w-[80%]">
+          <TechStack techStacks={firstHalf} />
+        </div>
+        <div className="md:hidden w-[60%]">
+          <TechStack techStacks={secondHalf} />
         </div>
       </div>
     </div>

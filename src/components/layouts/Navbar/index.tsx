@@ -5,6 +5,29 @@ import { FaBars } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import NavItem from "./NavItem";
 
+const NavLink = ({
+  name,
+  link,
+  isActive,
+}: {
+  name: string;
+  link: string;
+  isActive: boolean;
+}) => {
+  return (
+    <Link
+      href={link}
+      className={`${
+        isActive
+          ? "underline underline-offset-8 decoration-teal-500 decoration-4"
+          : "no-underline"
+      }`}
+    >
+      {name}
+    </Link>
+  );
+};
+
 const Navbar = () => {
   const { pathname } = useRouter();
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
@@ -34,19 +57,35 @@ const Navbar = () => {
       <div className="hidden md:block">
         <ul className="flex items-center gap-5">
           <li>
-            <Link href="/">Home</Link>
+            <NavLink name={"Home"} link="/" isActive={pathname === "/"} />
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <NavLink
+              name={"About"}
+              link="/about"
+              isActive={pathname === "/about"}
+            />
           </li>
           <li>
-            <Link href="/projects">Projects</Link>
+            <NavLink
+              name={"Projects"}
+              link="/projects"
+              isActive={pathname === "/projects"}
+            />
           </li>
           <li>
-            <Link href="/blogs">Blogs</Link>
+            <NavLink
+              name={"Blogs"}
+              link="/blogs"
+              isActive={pathname === "/blogs"}
+            />
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <NavLink
+              name={"Contact"}
+              link="/contact"
+              isActive={pathname === "/contact"}
+            />
           </li>
         </ul>
       </div>

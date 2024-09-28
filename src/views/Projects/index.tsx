@@ -65,7 +65,9 @@ export function TimelineDemo() {
       content: (
         <div>
           <ProjectButton
-            githubLink={"https://github.com/kemalcrisannaufal/Klasifikasi-Pneumonia-dan-TBC"}
+            githubLink={
+              "https://github.com/kemalcrisannaufal/Klasifikasi-Pneumonia-dan-TBC"
+            }
             websiteLink={""}
           />
           <div>
