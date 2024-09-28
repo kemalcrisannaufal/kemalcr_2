@@ -2,7 +2,7 @@ import React from "react";
 import { Timeline } from "@/components/ui/time-line";
 import ProjectButton from "@/components/elements/ProjectButton";
 
-export function TimelineDemo() {
+export function ProjectsList() {
   const data = [
     {
       title: "Portfolio Website",
@@ -89,7 +89,7 @@ export function TimelineDemo() {
 const ProjectsView = () => {
   return (
     <>
-      <TimelineDemo></TimelineDemo>
+      <ProjectsList />
     </>
   );
 };

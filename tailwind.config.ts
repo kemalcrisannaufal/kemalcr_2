@@ -11,12 +11,16 @@ const config: Config = {
   theme: {
     extend: {
       keyframes: {
-        marquee: {
+        slide_left: {
           "100%": { transform: "translateX(-40%)" },
+        },
+        slide_right: {
+          "100%": { transform: "translateX(40%)" },
         },
       },
       animation: {
-        marquee: "marquee 15s linear infinite",
+        slideLeft: "slide_left 15s linear infinite",
+        slideRight:"slide_right 15s linear infinite",
       },
       colors: {
         background: "var(--background)",

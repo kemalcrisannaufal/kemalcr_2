@@ -23,20 +23,17 @@ const HomeView = () => {
           <p className="text-center text-sm md:text-lg -mt-4 mb-4 text-neutral-600 font-medium">
             Computer Science student at Telkom University.
           </p>
-          <div className="hidden md:block flex gap-2 select-none">
-            <div className="bg-gradient-to-r from-teal-500 to-teal-300 px-4 py-2 text-white font-medium inline-block rounded-l">
+          <div className="flex gap-1 sm:gap-2 select-none">
+            <div className="text-xs sm:text-md bg-gradient-to-r from-teal-500 to-teal-300 px-2 sm:px-4 py-2 text-white font-medium inline-block rounded-l">
               Machine Learning
             </div>
-            <div className="bg-gradient-to-r from-blue-500 to-blue-300 px-4 py-2 text-white font-medium inline-block">
+            <div className="text-xs sm:text-md bg-gradient-to-r from-blue-500 to-blue-300 px-2 sm:px-4 py-2 text-white font-medium inline-block">
               Data Science
             </div>
-            <div className="bg-gradient-to-r from-cyan-500 to-cyan-300 px-4 py-2 text-white font-medium inline-block rounded-r">
+            <div className="text-xs sm:text-md bg-gradient-to-r from-cyan-500 to-cyan-300 px-2 sm:px-4 py-2 text-white font-medium inline-block rounded-r">
               Software Engineering
             </div>
           </div>
-          <p className="block md:hidden text-center text-xs text-neutral-700 font-semibold">
-            | Machine Learning | Data Science | Software Engineering |
-          </p>
         </div>
 
         <div className="hidden md:block w-[80%] lg:w-[50%]">
@@ -47,7 +44,7 @@ const HomeView = () => {
           <TechStack techStacks={firstHalf} />
         </div>
         <div className="md:hidden w-[60%]">
-          <TechStack techStacks={secondHalf} />
+          <TechStack techStacks={secondHalf} toRight={true} />
         </div>
       </div>
     </div>
