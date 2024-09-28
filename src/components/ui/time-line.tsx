@@ -32,7 +32,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-white dark:bg-neutral-950 font-sans pb-40 md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-5 px-4 md:px-8 lg:px-10">
+      {/* <div className="max-w-7xl mx-auto py-5 px-4 md:px-8 lg:px-10">
         <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
           Projects
         </h2>
@@ -41,7 +41,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           creativity as a developer. Here are some key projects I would like to
           highlight.
         </p>
-      </div>
+      </div> */}
 
       <div ref={ref} className="relative max-w-7xl mx-auto md:pb-20">
         {data.map((item, index) => (
@@ -59,7 +59,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
-              <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
+              <h3 className="md:hidden block text-xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
                 {item.title}
               </h3>
               {item.content}{" "}

@@ -8,7 +8,12 @@ const TechStack = ({
   techStacks: TechStackItemType[];
   toRight?: boolean;
 }) => {
-  const doubledTechStacks = [...techStacks, ...techStacks];
+  const doubledTechStacks = [
+    ...techStacks,
+    ...techStacks,
+    ...techStacks,
+    ...techStacks,
+  ];
 
   return (
     <div className="w-full overflow-hidden whitespace-nowrap mt-5">

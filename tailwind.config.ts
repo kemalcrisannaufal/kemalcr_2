@@ -20,7 +20,7 @@ const config: Config = {
       },
       animation: {
         slideLeft: "slide_left 15s linear infinite",
-        slideRight:"slide_right 15s linear infinite",
+        slideRight: "slide_right 15s linear infinite",
       },
       colors: {
         background: "var(--background)",
