@@ -15,6 +15,7 @@ const config: Config = {
           "100%": { transform: "translateX(-100%)" },
         },
         slide_right: {
+          "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(100%)" },
         },
         wiggle: {
@@ -25,7 +26,7 @@ const config: Config = {
       },
       animation: {
         slideLeft: "slide_left 15s linear infinite",
-        slideRight: "slide_right 15s linear infinite",
+        slideRight: "slide_right 20s linear infinite",
         wiggle: "wiggle 1s ease-in-out infinite",
       },
       colors: {

@@ -37,14 +37,14 @@ const AboutView = () => {
           </p>
 
           <p className="mt-2 text-neutral-800 text-xs md:text-sm lg:text-lg tracking-wide font-thin text-justify">
-            Halo, aku Kemal Crisannaufal, mahasiswa semester 7 S1 Informatika
-            Telkom University. Saat ini aku tertarik di bidang web programming.
-            Aku juga lagi ngerjain projek akhir kuliah di bidang computer vision
-            dan machine learning. Jangan ragu buat kontak aku ya 😄
+            Hi, I'm Kemal Crisannaufal, a 7th-semester Computer Science student
+            at Telkom University. I'm currently interested in web programming.
+            I'm also working on my final project in the field of computer vision
+            and machine learning. Feel free to contact me anytime 😄
           </p>
 
           <div className="mt-4 flex gap-3 h-10">
-            <a href="/resume/KEMAL CRISANNAUFAL_CV.pdf">
+            <a href="https://www.linkedin.com/in/kemalcrisannaufal/">
               <div className="h-full p-2 px-3 bg-blue-600 rounded text-white flex items-center gap-4 cursor-pointer font-medium hover:opacity-75">
                 <FaLinkedin />
               </div>
@@ -54,7 +54,7 @@ const AboutView = () => {
                 <FaGithub />
               </div>
             </a>
-            <a href="https://www.linkedin.com/in/kemalcrisannaufal/">
+            <a href="/resume/KEMAL CRISANNAUFAL_CV.pdf">
               <div className="h-full p-2 px-3 bg-gradient-to-r from-blue-500 to-teal-400 rounded text-white flex items-center gap-4 cursor-pointer font-medium hover:opacity-75">
                 <FaFile />
                 Resume
@@ -70,14 +70,14 @@ const AboutView = () => {
         </h3>
         <div className="grid md:grid-cols-2 gap-4 mt-3">
           <EducationCard
-            logoPath="images/TEL_U.jpg"
+            logoPath="/images/TEL_U.jpg"
             name="Telkom University"
             years="2021-2025"
             place="Bandung, Indonesia"
             major="S1 Informatika"
           />
           <EducationCard
-            logoPath="images/smanja.jpg"
+            logoPath="/images/smanja.jpg"
             name="SMAN 1 Jatinangor"
             years="2018-2021"
             place="Sumedang, Indonesia"

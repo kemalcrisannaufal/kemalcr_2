@@ -11,9 +11,13 @@ const HomeView = () => {
       text: "Crisannaufal",
     },
   ];
+
   const halfLength = Math.ceil(techStacks.length / 2);
   const firstHalf = techStacks.slice(0, halfLength);
   const secondHalf = techStacks.slice(halfLength);
+
+  const firstStack = [...firstHalf, ...firstHalf, ...firstHalf];
+  const secondStack = [...secondHalf, ...secondHalf, ...secondHalf];
 
   return (
     <div className="w-full min-h-[80vh] flex">
@@ -24,13 +28,13 @@ const HomeView = () => {
             Computer Science student at Telkom University.
           </p>
           <div className="flex gap-1 sm:gap-2 select-none">
-            <div className="text-xs sm:text-md bg-gradient-to-r from-teal-500 to-teal-300 px-2 sm:px-4 py-2 text-white font-medium inline-block rounded-l">
+            <div className="text-xs sm:text-md bg-gradient-to-r from-teal-500 to-teal-300 px-2 sm:px-4 py-2 text-white font-medium inline-block text-center  rounded-l">
               Machine Learning
             </div>
-            <div className="text-xs sm:text-md bg-gradient-to-r from-blue-500 to-blue-300 px-2 sm:px-4 py-2 text-white font-medium inline-block">
+            <div className="text-xs sm:text-md bg-gradient-to-r from-blue-500 to-blue-300 px-2 sm:px-4 py-2 text-white font-medium inline-block text-center">
               Data Science
             </div>
-            <div className="text-xs sm:text-md bg-gradient-to-r from-cyan-500 to-cyan-300 px-2 sm:px-4 py-2 text-white font-medium inline-block rounded-r">
+            <div className="text-xs sm:text-md bg-gradient-to-r from-cyan-500 to-cyan-300 px-2 sm:px-4 py-2 text-white font-medium inline-block text-center rounded-r">
               Software Engineering
             </div>
           </div>
@@ -41,10 +45,10 @@ const HomeView = () => {
         </div>
 
         <div className="md:hidden w-[80%]">
-          <TechStack techStacks={firstHalf} />
+          <TechStack techStacks={firstStack} />
         </div>
         <div className="md:hidden w-[60%]">
-          <TechStack techStacks={secondHalf} toRight={true} />
+          <TechStack techStacks={secondStack} toRight={true} />
         </div>
       </div>
     </div>

@@ -10,6 +10,8 @@ import {
   SiVisualstudiocode,
   SiJupyter,
   SiFramer,
+  SiFlutter,
+  SiMysql,
 } from "react-icons/si";
 import { DiHtml5, DiJava, DiPython, DiBootstrap } from "react-icons/di";
 import { TechStackItemType } from "@/types/TechStackItem";
@@ -89,5 +91,15 @@ export const techStacks: TechStackItemType[] = [
     name: "Framer",
     icon: SiFramer,
     className: "text-red-600 text-md lg:text-2xl",
+  },
+  {
+    name: "Flutter",
+    icon: SiFlutter,
+    className: "text-blue-600 text-md lg:text-2xl",
+  },
+  {
+    name: "MySQL",
+    icon: SiMysql,
+    className: "text-yellow-600 text-md lg:text-2xl",
   },
 ];

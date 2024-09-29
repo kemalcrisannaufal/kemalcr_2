@@ -30,16 +30,16 @@ const EducationCard = ({
         <hr className="w-full my-2" />
         <div className="w-full flex justify-center gap-4 lg:gap-5">
           <div className="flex items-center gap-2">
-            <FaDotCircle className="text-xs text-neutral-400" />
+            <FaDotCircle className="text-xs text-blue-500" />
             <p className="text-xs md:text-md lg:text-base">{years}</p>
           </div>
           <div className="flex items-center gap-2">
-            <FaDotCircle className="text-xs text-neutral-400" />
+            <FaDotCircle className="text-xs text-teal-500" />
             <p className="text-xs md:text-md lg:text-base">{major}</p>
           </div>
 
           <div className="hidden md:flex md:items-center md:gap-2">
-            <FaDotCircle className="text-xs text-neutral-400" />
+            <FaDotCircle className="text-xs text-cyan-500" />
             <p className="text-xs md:text-md lg:text-base">{place}</p>
           </div>
         </div>

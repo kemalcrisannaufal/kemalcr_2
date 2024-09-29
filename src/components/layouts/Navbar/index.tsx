@@ -21,9 +21,9 @@ const NavLink = ({
         isActive
           ? "underline underline-offset-8 decoration-teal-500 decoration-4"
           : "no-underline"
-      }`}
+      } focus:outline-none`}
     >
-      {name}
+      <p className="hover:text-teal-500">{name}</p>
     </Link>
   );
 };
@@ -50,7 +50,7 @@ const Navbar = () => {
 
       <div className="block md:hidden">
         <button onClick={handleClick}>
-          <FaBars />
+          <FaBars className="text-xl" />
         </button>
       </div>
 

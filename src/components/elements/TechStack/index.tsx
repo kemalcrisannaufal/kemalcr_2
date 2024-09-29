@@ -8,13 +8,6 @@ const TechStack = ({
   techStacks: TechStackItemType[];
   toRight?: boolean;
 }) => {
-  const doubledTechStacks = [
-    ...techStacks,
-    ...techStacks,
-    ...techStacks,
-    ...techStacks,
-  ];
-
   return (
     <div className="w-full overflow-hidden whitespace-nowrap mt-5">
       <div
@@ -22,7 +15,7 @@ const TechStack = ({
           toRight ? "animate-slideRight" : "animate-slideLeft"
         } gap-3`}
       >
-        {doubledTechStacks.map((item: TechStackItemType, index: number) => (
+        {techStacks.map((item: TechStackItemType, index: number) => (
           <TechStackItem
             key={index}
             name={item.name}
