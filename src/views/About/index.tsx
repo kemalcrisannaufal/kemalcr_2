@@ -70,7 +70,7 @@ const AboutView = () => {
         </h3>
         <div className="grid md:grid-cols-2 gap-4 mt-3">
           <EducationCard
-            logoPath="/images/TEL_U.jpg"
+            logoPath="/images/Tel_U.jpg"
             name="Telkom University"
             years="2021-2025"
             place="Bandung, Indonesia"
