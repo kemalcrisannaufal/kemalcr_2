@@ -5,15 +5,18 @@ import { motion } from "framer-motion";
 const NavItem = ({
   destination,
   name,
+  onClick,
 }: {
   destination: string;
   name: string;
+  onClick: () => void;
 }) => {
   return (
     <li className="w-full border rounded p-2 hover:border-slate-800 md:border-none md:p-0 md:mb-0">
       <Link
         href={destination}
         className="p-2 flex justify-between items-center"
+        onClick={onClick}
       >
         {name}
 

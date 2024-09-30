@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import NavItem from "./NavItem";
@@ -35,10 +35,6 @@ const Navbar = () => {
   const handleClick = () => {
     setIsSideBarOpen(!isSideBarOpen);
   };
-
-  useEffect(() => {
-    setIsSideBarOpen(false);
-  }, [pathname]);
 
   return (
     <div className="w-full h-[4rem] flex justify-between items-center py-5 px-10 overflow-hidden">
@@ -102,11 +98,27 @@ const Navbar = () => {
           >
             <div className="px-8 w-full">
               <ul className="flex flex-col items-start gap-5 w-full">
-                <NavItem destination="/" name="Home" />
-                <NavItem destination="/about" name="About" />
-                <NavItem destination="/projects" name="Projects" />
-                <NavItem destination="/blogs" name="Blogs" />
-                <NavItem destination="/contact" name="Contact" />
+                <NavItem destination="/" name="Home" onClick={handleClick} />
+                <NavItem
+                  destination="/about"
+                  name="About"
+                  onClick={handleClick}
+                />
+                <NavItem
+                  destination="/projects"
+                  name="Projects"
+                  onClick={handleClick}
+                />
+                <NavItem
+                  destination="/blogs"
+                  name="Blogs"
+                  onClick={handleClick}
+                />
+                <NavItem
+                  destination="/contact"
+                  name="Contact"
+                  onClick={handleClick}
+                />
               </ul>
             </div>
           </motion.div>
