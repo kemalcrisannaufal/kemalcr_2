@@ -1,12 +1,53 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope } from "react-icons/fa";
 import ContactButton from "@/components/elements/ContactButton";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import useSWR from "swr";
+import { fetcher } from "@/lib/swr/fetcher";
+import { useState } from "react";
+import { useRouter } from "next/router";
+
 const ContactView = () => {
+  const { data } = useSWR("/api/messages/", fetcher);
+  const [isMessageOpen, setIsMessageOpen] = useState(false);
+  const { push } = useRouter();
+
+  const handleClick = () => {
+    setIsMessageOpen(!isMessageOpen);
+  };
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+
+    const messageData = {
+      name: event.target.name.value,
+      email: event.target.email.value,
+      message: event.target.message.value,
+    };
+
+    if (!messageData.name || !messageData.email || !messageData.message) {
+      return;
+    }
+
+    const response = await fetch("/api/messages/store", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(messageData),
+    });
+
+    if (response.status === 200) {
+      event.target.reset();
+      push("/contact");
+    }
+  };
   return (
     <motion.div
       initial={{ opacity: 0, x: -10 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
+      className="w-full"
     >
       <div>
         <h1 className="text-neutral-800 text-xl lg:text-2xl font-semibold">
@@ -50,7 +91,7 @@ const ContactView = () => {
 
       <div className="md:flex gap-5">
         <div className="md:w-3/4 border pt-3 pb-6 px-4 rounded-lg bg-gradient-to-b from-blue-100 to-teal-50">
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-2 mb-3">
               <div>
                 <label
@@ -65,6 +106,7 @@ const ContactView = () => {
                   name="name"
                   className="w-full border p-2 mt-2 rounded-lg focus:outline-none focus:ring-2 text-xs sm:text-sm md:text-md"
                   placeholder="Name"
+                  maxLength={15}
                 />
               </div>
               <div>
@@ -95,10 +137,14 @@ const ContactView = () => {
                 id="message"
                 className="w-full border focus:outline-none focus:ring-2 rounded-lg p-3 mt-2 text-xs sm:text-sm md:text-md"
                 rows={10}
+                maxLength={500}
               ></textarea>
             </div>
             <div>
-              <button className="w-full border rounded-lg p-2 bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 text-white font-semibold">
+              <button
+                type="submit"
+                className="w-full border rounded-lg p-2 bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 text-white font-semibold"
+              >
                 Send Message
               </button>
             </div>
@@ -126,6 +172,50 @@ const ContactView = () => {
           </div>
         </div>
       </div>
+
+      <div className="absolute -bottom-20 right-0 lg:bottom-5 md:right-48 z-50">
+        <button
+          onClick={handleClick}
+          className="border p-3 rounded-full shadow-lg text-md bg-gradient-to-r from-blue-500 to-blue-300 text-white font-medium"
+        >
+          See Message
+        </button>
+      </div>
+
+      <AnimatePresence>
+        {isMessageOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className={` ${
+              !isMessageOpen
+                ? "hidden"
+                : "absolute w-3/4 lg:w-1/4 lg:h-[75vh] bg-gradient-to-b from-neutral-200 to-neutral-100 rounded-lg p-5 z-40 right-0 top-0 overflow-auto"
+            }`}
+          >
+            {data &&
+              data.data.map((item: any, index: number) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  exit={{ opacity: 0 }}
+                  className="border rounded-lg p-3 shadow-lg border-2 border-teal-100 mb-3 bg-white"
+                >
+                  <p className="text-base font-medium text-neutral-800 break-words">
+                    {item.name}
+                  </p>
+                  <p className="text-sm font-normal text-neutral-600 break-words">
+                    {item.message}
+                  </p>
+                </motion.div>
+              ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
