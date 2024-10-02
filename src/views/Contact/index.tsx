@@ -5,12 +5,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import useSWR from "swr";
 import { fetcher } from "@/lib/swr/fetcher";
 import { useState } from "react";
-import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 
 const ContactView = () => {
   const { data } = useSWR("/api/messages/", fetcher);
   const [isMessageOpen, setIsMessageOpen] = useState(false);
-  const { push } = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = () => {
     setIsMessageOpen(!isMessageOpen);
@@ -19,6 +19,8 @@ const ContactView = () => {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
+    setIsLoading(true);
+
     const messageData = {
       name: event.target.name.value,
       email: event.target.email.value,
@@ -26,6 +28,16 @@ const ContactView = () => {
     };
 
     if (!messageData.name || !messageData.email || !messageData.message) {
+      Swal.fire({
+        title: "Alert!",
+        text: "Please fill in all fields.",
+        icon: "info",
+        confirmButtonText: "Oke",
+        showCancelButton: false,
+        allowOutsideClick: false,
+      });
+
+      setIsLoading(false);
       return;
     }
 
@@ -39,8 +51,20 @@ const ContactView = () => {
 
     if (response.status === 200) {
       event.target.reset();
-      push("/contact");
+      Swal.fire({
+        title: "Success!",
+        text: "Message sent successfully!",
+        icon: "success",
+        confirmButtonText: "OK",
+        allowOutsideClick: false,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.reload();
+        }
+      });
     }
+
+    setIsLoading(false);
   };
   return (
     <motion.div
@@ -143,7 +167,9 @@ const ContactView = () => {
             <div>
               <button
                 type="submit"
-                className="w-full border rounded-lg p-2 bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 text-white font-semibold"
+                className={`w-full border rounded-lg p-2 bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 text-white font-semibold ${
+                  isLoading && "cursor-not-allowed"
+                }`}
               >
                 Send Message
               </button>
@@ -176,7 +202,7 @@ const ContactView = () => {
       <div className="absolute -bottom-20 right-0 lg:bottom-5 md:right-48 z-50">
         <button
           onClick={handleClick}
-          className="border p-3 rounded-full shadow-lg text-md bg-gradient-to-r from-blue-500 to-blue-300 text-white font-medium"
+          className={`border p-3 rounded-full shadow-lg text-md bg-gradient-to-r from-blue-500 to-blue-300 text-white font-medium hover:scale-105 transition-all duration-300 ease-in-out`}
         >
           See Message
         </button>
