@@ -23,6 +23,38 @@ import { motion } from "framer-motion";
 export function ProjectsList() {
   const data = [
     {
+      title: "Pixar's Dashboard",
+      content: (
+        <div>
+          <ProjectButton
+            githubLink={
+              "https://public.tableau.com/app/profile/kemal.crisannaufal/viz/PixarsIMDbStoryV2/PixarsIMDbStory"
+            }
+            websiteLink={
+              "https://public.tableau.com/app/profile/kemal.crisannaufal/viz/PixarsIMDbStoryV2/PixarsIMDbStory"
+            }
+            disabled={false}
+          />
+          <div>
+            <p className="text-xs md:text-md lg:text-base mb-2 text-neutral-500 font-medium">
+              📄 Description: A Dashboard of Pixar Movies Based on IMDb dataset.
+            </p>
+            <p className="text-xs md:text-md lg:text-base mr-2">
+              💻 Tech Stack : Tableau
+            </p>
+
+            <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] hover:scale-110 hover:transition-all hover:duration-300 hover:ease-in-out hover:shadow-lg flex items-center">
+              <img
+                src="/images/pixar.png"
+                alt=""
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
       title: "Portfolio Website",
       content: (
         <div>

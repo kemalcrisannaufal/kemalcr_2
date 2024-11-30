@@ -21,7 +21,7 @@ const NavLink = ({
         isActive
           ? "underline underline-offset-8 decoration-teal-500 decoration-4"
           : "no-underline"
-      } focus:outline-none`}
+      } focus:outline-none select-none`}
     >
       <p className="hover:text-teal-500">{name}</p>
     </Link>
